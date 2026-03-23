@@ -35,14 +35,19 @@
 ---
 
 ## Part 2 — Bringing the Stack Up
+**Side Notes**
+> docker compose build reads the Dockerfile and builds the image. It installs Python, copies your code in, sets everything up. But nothing is running yet.
+> docker compose up -d takes that image (plus the mongo image) and actually starts the containers. The -d stands for "detached," runs everything in the background so the terminal stays clean and usable instead of being locked up showing a wall of logs. 
 
 **What output did you see after running `docker compose up -d`?**
 
-> Your answer here
+> [+] Running 4/4
 
 **What does `docker compose ps` show? What is in the STATUS column?**
 
-> Your answer here
+> NAME                     IMAGE              COMMAND                  SERVICE   CREATED         STATUS         PORTS
+> fastapi-demo-api-1       fastapi-demo-api   "fastapi run app/mai…"   api       3 minutes ago   Up 3 minutes   0.0.0.0:8000->80/tcp, [::]:8000->80/tcp 
+> fastapi-demo-mongodb-1   mongo:latest       "docker-entrypoint.s…"   mongodb   3 minutes ago   Up 3 minutes   0.0.0.0:27017->27017/tcp, [::]:27017->27017/tcp
 
 ---
 
