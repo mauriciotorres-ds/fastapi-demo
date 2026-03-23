@@ -6,23 +6,31 @@
 
 **What base image does the `Dockerfile` use?**
 
-> Testing Testing 
+> The base image is `python:3.11-alpine3.20`
+> FROM python:3.11-alpine3.20 - Code used in the Dockerfile
+> The base image is the foundation of the container, which is a minimal operating system with Python 3.11 pre-installed, pulled from Docker Hub. main.py and requirements.txt are the app's files that get copied into that base. The base image is what the app lives inside of, not the app itself.
+
+
+
 
 **How many services are defined in `docker-compose.yml`? What are their names?**
 
-Testing Testing 
+>  2 - api and mongodb. Two completely seperate images running as two seperate containers. 
 
 **Which port does FastAPI listen on inside the container, and which host port is it mapped to?**
 
-> Your answer here
+> Host:container , 8000:80
+> FastAPI listens on port 80 inside the container, and Docker maps that to port 8000 on my laptop
 
 **What environment variable tells FastAPI where to find MongoDB?**
 
-> Your answer here
+>     environment:
+>      - MONGO_URI=mongodb://mongodb:27017/ 
+> This line tells the FastAPI app, that MongoDB is reachable at this address on the docker network. 
 
 **What do `insert-one.py` and `insert-many.py` do?**
 
-> Your answer here
+> They're seed scripts for populating the database with fake test data. insert-one.py manually inserts a single hardcoded person record (name + email) into MongoDB. insert-many.py does the same but inserts a batch of records at once 
 
 ---
 
