@@ -52,16 +52,28 @@
 ---
 
 ## Part 3 — Watching Your Containers
+**What log message appears when FastAPI starts successfully? What does it tell you about the ASGI server being used?**
+>  Asynchronous Server Gateway Interface = ASGI
+> Uvicorn (the ASGI server), receives the raw HTTP request, hands it to FastAPI (the framework), FastAPI runs your Python code, sends a response back through Uvicorn
+
+> INFO:     Uvicorn running on http://0.0.0.0:80 
+> INFO:     Application startup complete
+> This tells you that Uvicorn is the ASGI server being used. Uvicorn acts as the layer between incoming HTTP requests and the FastAPI application — it listens on port 80 inside the container, receives raw requests, and hands them off to FastAPI to process. 
+
+
 
 **Screenshot #1:** `docker stats --no-stream`
 - Which container uses more memory at idle?
 - What is the MEM USAGE / LIMIT ratio for each?
 
-> Your answer here
+> At Idle, mongodb uses more memory. 
+> Mem usage /Limit ratio
+> API:  268.8MiB / 7.653GiB, mongodb: 372.3MiB / 7.653GiB   
 
 **What log message appears when FastAPI starts successfully?**
 
-> Your answer here
+> The log message that appears when FastAPI starts successfully is Uvicorn running on http://0.0.0.0:80 along with Application startup complete. This says thatUvicorn is the ASGI server being used, it's the layer that listens for incoming HTTP requests and hands them off to FastAPI to process.
+
 
 ---
 
