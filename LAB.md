@@ -192,7 +192,7 @@ Use `-X POST` to send data. The `-H` flag sets the `Content-Type` header and `-d
 Insert a single record:
 
 ```bash
-curl -X POST http://localhost:8000/items \
+curl -X POST http://localhost:8000/people \
      -H "Content-Type: application/json" \
      -d '{"name": "Alice Nguyen", "email": "anguyen@example.com"}'
 ```
@@ -200,11 +200,11 @@ curl -X POST http://localhost:8000/items \
 Add a few more so your database has some variety:
 
 ```bash
-curl -X POST http://localhost:8000/items \
+curl -X POST http://localhost:8000/people \
      -H "Content-Type: application/json" \
      -d '{"name": "Bob Okafor", "email": "bokafor@example.com"}'
 
-curl -X POST http://localhost:8000/items \
+curl -X POST http://localhost:8000/people \
      -H "Content-Type: application/json" \
      -d '{"name": "Carmen Reyes", "email": "creyes@example.com"}'
 ```
@@ -212,7 +212,7 @@ curl -X POST http://localhost:8000/items \
 Confirm all three are returned:
 
 ```bash
-curl -s http://localhost:8000/items | python3 -m json.tool
+curl -s http://localhost:8000/people | python3 -m json.tool
 ```
 
 📸 **Screenshot #2:** Take a screenshot of your terminal showing the `GET /items` response with at least three JSON documents. Pretty-printed output preferred. Submit on Canvas.

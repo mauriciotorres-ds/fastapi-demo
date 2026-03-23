@@ -101,7 +101,7 @@
 
 **What does the `_id` field look like in a document? Why does MongoDB add it?**
 
-> Your answer here
+> Your 
 
 ---
 
@@ -109,7 +109,7 @@
 
 **After running `docker compose stop` and `docker compose start`, is your data still there? Why?**
 
-> Your answer here
+> Your answer 
 
 ---
 
